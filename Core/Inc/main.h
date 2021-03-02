@@ -60,10 +60,10 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define B1_Pin GPIO_PIN_13
 #define B1_GPIO_Port GPIOC
-#define EP_SDA_Pin GPIO_PIN_0
-#define EP_SDA_GPIO_Port GPIOF
-#define EP_SCL_Pin GPIO_PIN_1
-#define EP_SCL_GPIO_Port GPIOF
+#define EP_SCL_Pin GPIO_PIN_5
+#define EP_SCL_GPIO_Port GPIOA
+#define EP_SDA_Pin GPIO_PIN_7
+#define EP_SDA_GPIO_Port GPIOA
 #define EP_RES_Pin GPIO_PIN_2
 #define EP_RES_GPIO_Port GPIOB
 #define LD3_Pin GPIO_PIN_14
@@ -101,7 +101,17 @@ void Error_Handler(void);
 #define LD2_Pin GPIO_PIN_7
 #define LD2_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
+#define SPI_CS_GPIO_Port	EP_CS_GPIO_Port
+#define SPI_CS_Pin			EP_CS_Pin
 
+#define RST_GPIO_Port		EP_RES_GPIO_Port
+#define RST_Pin				EP_RES_Pin
+
+#define DC_GPIO_Port		EP_DC_GPIO_Port
+#define DC_Pin				EP_DC_Pin
+
+#define BUSY_GPIO_Port		EP_BUSY_GPIO_Port
+#define BUSY_Pin			EP_BUSY_Pin
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
