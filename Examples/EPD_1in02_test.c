@@ -30,6 +30,9 @@
 #include "EPD_Test.h"
 #include "EPD_1in02d.h"
 #include <string.h>
+#include "cruz.h"
+#include "logo.h"
+
 
 int EPD_1in02d_test(void)
 {
@@ -91,7 +94,7 @@ int EPD_1in02d_test(void)
     Paint_DrawCircle(60, 40, 25, BLACK, DOT_PIXEL_1X1, DRAW_FILL_EMPTY);
 
     printf("EPD_1IN02_Display\r\n");
-    EPD_1IN02_Display(BlackImage);
+    EPD_1IN02_Display(cruz);
     DEV_Delay_ms(2000);
 
     Paint_Clear(WHITE);
@@ -101,12 +104,12 @@ int EPD_1in02d_test(void)
     Paint_DrawNum(10, 50, 987654321, &Font16, WHITE, BLACK);
 
     printf("EPD_1IN02_Display\r\n");
-    EPD_1IN02_Display(BlackImage);
+    EPD_1IN02_Display(logo);
     DEV_Delay_ms(2000);
 
     Paint_Clear(WHITE);
-    Paint_DrawString_CN(0, 10,"ÄãºÃabcÊ÷Ý®ÅÉ", &Font12CN, BLACK, WHITE);
-    Paint_DrawString_CN(0, 30,"Î¢Ñ©µç×Ó", &Font24CN, WHITE, BLACK);
+    Paint_DrawString_CN(0, 10,"ï¿½ï¿½ï¿½abcï¿½ï¿½Ý®ï¿½ï¿½", &Font12CN, BLACK, WHITE);
+    Paint_DrawString_CN(0, 30,"Î¢Ñ©ï¿½ï¿½ï¿½ï¿½", &Font24CN, WHITE, BLACK);
     printf("EPD_1IN02_Display\r\n");
     EPD_1IN02_Display(BlackImage);
     DEV_Delay_ms(2000);
