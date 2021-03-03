@@ -23,6 +23,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "EPD_Test.h"
+#include "my_button.h"
+#include "my_e_paper.h"
+#include "my_led.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -48,7 +51,7 @@ SPI_HandleTypeDef hspi1;
 PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 /* USER CODE BEGIN PV */
-
+extern uint8_t boton_estado, boton_flanco;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -73,7 +76,8 @@ static void MX_SPI1_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+	uint8_t numero_imagen = 0;
+	uint32_t delta_tick, tick_anterior;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -98,7 +102,8 @@ int main(void)
   MX_USB_OTG_FS_PCD_Init();
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
-		EPD_1in02d_test();
+  EPD_Init();
+//		EPD_1in02d_test();
 
 //		EPD_1in54_test();
 //		EPD_1in54_V2_test();
@@ -150,13 +155,28 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  boton_flanco = 1;
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  HAL_Delay(10000);
+//	  HAL_Delay(10000);
+	  toggle_led(LED_AZUL_PIN);
 
+	  debounce_btn();
+
+	  if(boton_flanco && boton_estado)
+	  {
+		  boton_flanco = 0;
+		  HAL_GPIO_TogglePin(LED_ROJO_PIN);
+
+		  tick_anterior = HAL_GetTick();
+		  EPD_dibujar_imagen(numero_imagen);
+		  delta_tick = HAL_GetTick() - tick_anterior;
+		  numero_imagen++;
+		  numero_imagen %= 3;
+	  }
   }
   /* USER CODE END 3 */
 }

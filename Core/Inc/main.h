@@ -112,6 +112,11 @@ void Error_Handler(void);
 
 #define BUSY_GPIO_Port		EP_BUSY_GPIO_Port
 #define BUSY_Pin			EP_BUSY_Pin
+
+#define BOTON_PIN			B1_GPIO_Port, B1_Pin
+
+#define LED_ROJO_PIN		LD3_GPIO_Port, LD3_Pin
+#define LED_AZUL_PIN		LD2_GPIO_Port, LD2_Pin
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

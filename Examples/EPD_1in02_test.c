@@ -30,8 +30,9 @@
 #include "EPD_Test.h"
 #include "EPD_1in02d.h"
 #include <string.h>
-#include "cruz.h"
-#include "logo.h"
+//#include "cruz.h"
+//#include "logo.h"
+//#include "tilde.h"
 
 
 int EPD_1in02d_test(void)
@@ -94,8 +95,14 @@ int EPD_1in02d_test(void)
     Paint_DrawCircle(60, 40, 25, BLACK, DOT_PIXEL_1X1, DRAW_FILL_EMPTY);
 
     printf("EPD_1IN02_Display\r\n");
-    EPD_1IN02_Display(cruz);
-    DEV_Delay_ms(2000);
+//    EPD_1IN02_Display(logo);
+//    DEV_Delay_ms(2000);
+//
+//    EPD_1IN02_Display(cruz);
+//    DEV_Delay_ms(2000);
+//
+//    EPD_1IN02_Display(tilde);
+//    DEV_Delay_ms(2000);
 
     Paint_Clear(WHITE);
     Paint_DrawString_EN(10, 0, "waveshare", &Font16, BLACK, WHITE);
@@ -104,8 +111,8 @@ int EPD_1in02d_test(void)
     Paint_DrawNum(10, 50, 987654321, &Font16, WHITE, BLACK);
 
     printf("EPD_1IN02_Display\r\n");
-    EPD_1IN02_Display(logo);
-    DEV_Delay_ms(2000);
+//    EPD_1IN02_Display(logo);
+//    DEV_Delay_ms(2000);
 
     Paint_Clear(WHITE);
     Paint_DrawString_CN(0, 10,"���abc��ݮ��", &Font12CN, BLACK, WHITE);
