@@ -6,6 +6,7 @@
  */
 
 #include "EPD_1in02d.h"
+#include "string.h"
 #include "cruz.h"
 #include "logo.h"
 #include "tilde.h"
@@ -14,7 +15,7 @@
 #define 	EPD_HEIGHT 		EPD_1IN02_HEIGHT
 #define 	IMAGE_SIZE		1280
 
-UBYTE old_Image[IMAGE_SIZE];
+UBYTE *imagen_anterior;
 
 uint8_t EPD_Init(void)
 {
@@ -40,20 +41,37 @@ uint8_t EPD_Init(void)
 
 void EPD_dibujar_imagen(uint8_t numero_imagen)
 {
-  switch(numero_imagen)
-  {
-	default:
-	case 0:
-		EPD_1IN02_Display(logo);
-	  break;
-	case 1:
-		EPD_1IN02_Display(cruz);
-	  break;
-	case 2:
-		EPD_1IN02_Display(tilde);
-	  break;
-	case 3:
-		EPD_1IN02_Display(logo);
-	  break;
-  }
+	UBYTE *imagen;
+
+	switch(numero_imagen)
+	{
+		default:
+		case 0:
+			imagen = logo;
+			//EPD_1IN02_Display(logo);
+			break;
+		case 1:
+			imagen = cruz;
+			//EPD_1IN02_Display(cruz);
+			break;
+		case 2:
+			imagen = tilde;
+			//EPD_1IN02_Display(tilde);
+			break;
+		case 3:
+			imagen = logo;
+			//EPD_1IN02_Display(logo);
+			break;
+	}
+
+	if(imagen_anterior == NULL)
+	{
+		EPD_1IN02_Display(imagen);
+		EPD_1IN02_Part_Init();
+	}
+	else
+		EPD_1IN02_DisplayPartial(imagen_anterior, imagen);
+
+	imagen_anterior = imagen;
+	//memcpy(imagen_anterior, imagen, IMAGE_SIZE);
 }
