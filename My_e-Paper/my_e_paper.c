@@ -64,13 +64,22 @@ void EPD_dibujar_imagen(uint8_t numero_imagen)
 			break;
 	}
 
+
 	if(imagen_anterior == NULL)
 	{
 		EPD_1IN02_Display(imagen);
 		EPD_1IN02_Part_Init();
+//		HAL_Delay(800);
+//		EPD_1IN02_PowerOff();
 	}
 	else
+	{
+//		EPD_1IN02_PowerOn();
 		EPD_1IN02_DisplayPartial(imagen_anterior, imagen);
+//		EPD_1IN02_PowerOff();
+	}
+
+
 
 	imagen_anterior = imagen;
 	//memcpy(imagen_anterior, imagen, IMAGE_SIZE);

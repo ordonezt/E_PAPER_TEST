@@ -128,17 +128,17 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="My_e-Paper"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Examples"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Fonts"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="My_Button"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="My_Led"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="e-Paper"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Config"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Examples"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Fonts"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="GUI"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Images"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="My_Button"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="My_Led"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="My_e-Paper"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="e-Paper"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -214,12 +214,12 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="My_e-Paper"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="My_Button"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="My_Led"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Images"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="My_Button"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="My_Led"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="My_e-Paper"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

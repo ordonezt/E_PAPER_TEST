@@ -42,6 +42,8 @@ void EPD_1IN02_Display(UBYTE *Image);
 void EPD_1IN02_DisplayPartial(UBYTE *Image1, UBYTE *Image2);
 void EPD_1IN02_Sleep(void);
 void EPD_1IN02_Part_Init(void);
+void EPD_1IN02_PowerOn(void);
+void EPD_1IN02_PowerOff(void);
 #endif
 
 

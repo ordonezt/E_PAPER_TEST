@@ -166,7 +166,8 @@ void EPD_1IN02_WaitUntilIdle(void)
 		busy =!(busy & 0x01);        
 	}
 	while(busy);
-	DEV_Delay_ms(800);                       
+//	DEV_Delay_ms(800);
+//	DEV_Delay_ms(100);
 }
 
 
@@ -175,13 +176,13 @@ function :	Turn On Display
 ******************************************************************************/
 void EPD_1IN02_TurnOnDisplay(void)
 {
-    // EPD_1IN02_SendCommand(0x04);  //power on
-    // EPD_1IN02_WaitUntilIdle();
+     EPD_1IN02_SendCommand(0x04);  //power on
+     EPD_1IN02_WaitUntilIdle();
     EPD_1IN02_SendCommand(0x12);  //Start refreshing the screen
     DEV_Delay_ms(10);
     EPD_1IN02_WaitUntilIdle();
-    // EPD_1IN02_SendCommand(0x02);
-    // EPD_1IN02_WaitUntilIdle();    //power off
+     EPD_1IN02_SendCommand(0x02);
+     EPD_1IN02_WaitUntilIdle();    //power off
 }
 
 /******************************************************************************
@@ -385,7 +386,22 @@ void EPD_1IN02_Sleep(void)
     DEV_Digital_Write(EPD_RST_PIN, 0);// Module reset
 }
 
+/******************************************************************************
+function :	Power Off
+******************************************************************************/
+void EPD_1IN02_PowerOff(void)
+{
+//    EPD_1IN02_SendCommand(0X50);
+//    EPD_1IN02_SendData(0xf7);
+    EPD_1IN02_SendCommand(0X02);  	//power off
+    EPD_1IN02_WaitUntilIdle();
+}
 
-
-
-
+/******************************************************************************
+function :	Power On
+******************************************************************************/
+void EPD_1IN02_PowerOn(void)
+{
+	EPD_1IN02_SendCommand(0x04);  //power on
+	EPD_1IN02_WaitUntilIdle();
+}
