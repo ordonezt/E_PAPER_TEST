@@ -179,7 +179,7 @@ void EPD_1IN02_TurnOnDisplay(void)
      EPD_1IN02_SendCommand(0x04);  //power on
      EPD_1IN02_WaitUntilIdle();
     EPD_1IN02_SendCommand(0x12);  //Start refreshing the screen
-    DEV_Delay_ms(10);
+    //DEV_Delay_ms(10);
     EPD_1IN02_WaitUntilIdle();
      EPD_1IN02_SendCommand(0x02);
      EPD_1IN02_WaitUntilIdle();    //power off
